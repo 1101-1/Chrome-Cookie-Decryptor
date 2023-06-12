@@ -3,7 +3,7 @@ use aes_gcm::{
     Aes256Gcm, KeyInit,
 };
 
-// #[cfg(windows)]
+#[cfg(windows)]
 pub async fn decrypt_cookie(key: Vec<u8>, encrypted_value: Vec<u8>) -> String {
     let iv = &encrypted_value[3..15];
     let encrypted_value = &encrypted_value[15..];

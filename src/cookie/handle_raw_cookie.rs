@@ -6,6 +6,7 @@ use std::{io::ErrorKind, sync::Arc};
 use tokio::io::Error;
 use tokio::{fs::File, sync::Mutex};
 
+#[cfg(windows)]
 use super::cookie_decryption::decrypt_cookie;
 use super::cookie_form::UserCookie;
 

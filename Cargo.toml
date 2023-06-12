@@ -19,6 +19,3 @@ base64 = "0.21.2"
 winapi = { version = "0.3.6", features = ["wingdi", "winnt", "winuser", "dpapi", "winbase"] }
 aes-gcm = "0.10.2"
 tokio = { version = "1.28.2", features = ["rt", "io-util", "io-std", "macros", "fs", "sync", "rt-multi-thread"] }
-
-#[target.'cfg(target_os = "windows")'.features]
-#default = ["windows"]

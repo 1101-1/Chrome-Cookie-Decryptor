@@ -35,12 +35,17 @@ async fn main() -> io::Result<()> {
         }
     };
 
-    match handle_chrome_cookies(os_username.clone(), chrome_cookies, path_to_folder.as_str()).await
-    {
-        Ok(()) => return Ok(()),
+    tokio::spawn(async move {
+        match handle_chrome_cookies(os_username.clone(), chrome_cookies, path_to_folder.as_str()).await {
+            Ok(()) => {
+            return Ok(())
+        },
         Err(e) => {
             println!("{}", e);
             return Err(tokio::io::Error::new(ErrorKind::Other, format!("{}", e)));
         }
-    };
+        }
+    })
+    .await
+    .unwrap()
 }
