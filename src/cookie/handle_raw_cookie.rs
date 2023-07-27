@@ -26,9 +26,6 @@ pub async fn handle_chrome_cookies(
             ));
         }
     };
-    async_writeln!(file, "# Netscape HTTP Cookie File").unwrap();
-    async_writeln!(file, "# http://curl.haxx.se/rfc/cookie_spec.html").unwrap();
-    async_writeln!(file, "# This is a generated file! Do not edit.").unwrap();
 
     let cookie_iter = cookies;
 

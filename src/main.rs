@@ -11,8 +11,6 @@ use tokio::io;
 mod cookie;
 #[cfg(windows)]
 mod encrypted_key;
-#[cfg(windows)]
-mod marco;
 
 #[cfg(not(windows))]
 fn main() -> Result<(), Box<dyn std::error::Error>> {
