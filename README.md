@@ -1,4 +1,4 @@
-# Chrome Cookie Decryptor(CDD) 
+# Chrome Cookie Decryptor(CCD) 
 ## Features
 1. Very fast
 2. Easy to work
@@ -6,12 +6,12 @@
 4. Only on Windows!!!
 
 ## How to install?
-In your cmd write `cargo install cdd`
+In your cmd write `cargo install ccd`
 
 ## How to use?
 
 ```bash
-cdd <path>[OPTIONAL]
+ccd <path>[OPTIONAL]
 ```
 
 ### `IMPORTANT`
