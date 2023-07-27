@@ -1,17 +1,22 @@
+#[cfg(windows)]
 use std::{env::args, io::ErrorKind, path::Path};
 
 #[cfg(windows)]
 use cookie::{get_raw_cookies::take_cookies_from_db, handle_raw_cookie::handle_chrome_cookies};
 
+#[cfg(windows)]
 use tokio::io;
 
+#[cfg(windows)]
 mod cookie;
+#[cfg(windows)]
 mod encrypted_key;
+#[cfg(windows)]
 mod marco;
 
 #[cfg(not(windows))]
-fn main() {
-    //* Only windows supported */
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    Err("Platform does not supported. Only windows".into())
 }
 
 #[cfg(windows)]
